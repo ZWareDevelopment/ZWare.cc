@@ -45,7 +45,8 @@ public class ClientLoader implements IFMLLoadingPlugin {
 	}
 
 	@Override
-	public void injectData(Map<String, Object> dataMap) {}
+	public void injectData(Map<String, Object> dataMap) {
+	}
 
 	@Override
 	public String getAccessTransformerClass() {

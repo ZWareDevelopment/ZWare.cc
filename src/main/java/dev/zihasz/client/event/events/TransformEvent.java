@@ -12,7 +12,9 @@ public abstract class TransformEvent extends Event {
 		this.handSide = handSide;
 	}
 
-	public EnumHandSide getHandSide() { return handSide; }
+	public EnumHandSide getHandSide() {
+		return handSide;
+	}
 
 	public static class FirstPerson extends TransformEvent {
 
@@ -25,6 +27,7 @@ public abstract class TransformEvent extends Event {
 				super(handSide);
 			}
 		}
+
 		public static class Eat extends FirstPerson {
 
 			private final ItemStack itemStack;
@@ -34,7 +37,9 @@ public abstract class TransformEvent extends Event {
 				this.itemStack = itemStack;
 			}
 
-			public ItemStack getItemStack() { return itemStack; }
+			public ItemStack getItemStack() {
+				return itemStack;
+			}
 
 		}
 

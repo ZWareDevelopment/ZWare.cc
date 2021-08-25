@@ -11,8 +11,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class AntiAim extends Module {
 
-	private Setting<Float> pitch = new SettingBuilder<>(0f).name("Pitch").description("The pitch to look at").min(-360f).max(360f).build(this);
-	private Setting<Float> yaw = new SettingBuilder<>(0f).name("Yaw").description("The yaw to look at").min(-360f).max(360f).build(this);
+	private final Setting<Float> pitch = new SettingBuilder<>(0f).name("Pitch").description("The pitch to look at").min(-360f).max(360f).build(this);
+	private final Setting<Float> yaw = new SettingBuilder<>(0f).name("Yaw").description("The yaw to look at").min(-360f).max(360f).build(this);
 
 	public AntiAim() {
 		super("AntiAim", "Its like csgo all over again!", Category.PLAYER);

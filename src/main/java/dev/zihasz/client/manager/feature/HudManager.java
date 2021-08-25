@@ -28,7 +28,9 @@ public class HudManager extends Manager {
 		}
 	}
 
-	public void addComponent(HudComponent component) { this.components.add(component); }
+	public void addComponent(HudComponent component) {
+		this.components.add(component);
+	}
 
 	@SubscribeEvent
 	public void onRender(TickEvent.RenderTickEvent event) {
@@ -43,6 +45,7 @@ public class HudManager extends Manager {
 				.findFirst()
 				.orElse(null);
 	}
+
 	public HudComponent getComponent(Class<? extends HudComponent> clazz) {
 		return this.components.stream()
 				.filter(component -> component.getClass() == clazz)
@@ -53,5 +56,5 @@ public class HudManager extends Manager {
 	public List<HudComponent> getComponents() {
 		return this.components;
 	}
-	
+
 }

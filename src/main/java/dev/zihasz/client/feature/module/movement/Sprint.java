@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class Sprint extends Module {
 
-	private Setting<Boolean> rage = new SettingBuilder<>(true).name("Rage").description("Always sprints.").build(this);
+	private final Setting<Boolean> rage = new SettingBuilder<>(true).name("Rage").description("Always sprints.").build(this);
 
 	public Sprint() {
 		super("Sprint", "Automatically sprints for you.", Category.MOVEMENT);
@@ -23,9 +23,9 @@ public class Sprint extends Module {
 			mc.player.setSprinting(mc.gameSettings.keyBindSprint.isKeyDown());
 			return;
 		}
-		mc.player.setSprinting(!rage.getValue() || (mc.gameSettings.keyBindForward.isKeyDown() &&
-						!mc.player.collidedHorizontally &&
-						!mc.player.isSneaking()));
+		mc.player.setSprinting(rage.getValue() || (mc.gameSettings.keyBindForward.isKeyDown() &&
+				!mc.player.collidedHorizontally &&
+				!mc.player.isSneaking()));
 	}
 
 	@Override

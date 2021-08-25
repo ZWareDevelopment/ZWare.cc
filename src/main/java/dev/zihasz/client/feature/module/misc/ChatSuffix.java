@@ -10,14 +10,14 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ChatSuffix extends Module {
 
-	public ChatSuffix() {
-		super("ChatSuffix", "Appends a suffix to all your chat messages.", Category.MISC);
-	}
-
 	private final Setting<Boolean> version = new SettingBuilder<>(true)
 			.name("Version")
 			.description("Show the version of the client in the suffix")
 			.build(this);
+
+	public ChatSuffix() {
+		super("ChatSuffix", "Appends a suffix to all your chat messages.", Category.MISC);
+	}
 
 	@SubscribeEvent
 	public void onChat(ClientChatEvent event) {

@@ -36,6 +36,7 @@ public class Setting<T> {
 	public String getName() {
 		return name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
@@ -43,6 +44,7 @@ public class Setting<T> {
 	public T getValue() {
 		return value;
 	}
+
 	public void setValue(T newValue) {
 		if (callback.apply(value, newValue)) value = newValue;
 	}
@@ -50,6 +52,7 @@ public class Setting<T> {
 	public T getMin() {
 		return min;
 	}
+
 	public T getMax() {
 		return max;
 	}
@@ -57,6 +60,7 @@ public class Setting<T> {
 	public void addSub(Setting<?> setting) {
 		this.subs.add(setting);
 	}
+
 	public Setting<?> getSub(String name) {
 		for (Setting<?> setting : subs) {
 			if (setting.name.equalsIgnoreCase(name))
@@ -64,6 +68,7 @@ public class Setting<T> {
 		}
 		return null;
 	}
+
 	public List<Setting> getSubs() {
 		return this.subs;
 	}

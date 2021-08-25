@@ -42,7 +42,9 @@ public class ModuleManager extends Manager {
 				module.toggle();
 	}
 
-	public void addModule(Module module) { this.modules.add(module); }
+	public void addModule(Module module) {
+		this.modules.add(module);
+	}
 
 	public Module getModule(String name) {
 		return this.modules.stream()
@@ -50,6 +52,7 @@ public class ModuleManager extends Manager {
 				.findFirst()
 				.orElse(null);
 	}
+
 	public Module getModule(Class<? extends Module> clazz) {
 		return this.modules.stream()
 				.filter(module -> module.getClass() == clazz)
@@ -60,6 +63,7 @@ public class ModuleManager extends Manager {
 	public List<Module> getModules() {
 		return this.modules;
 	}
+
 	public List<Module> getModules(Category category) {
 		return this.modules.stream()
 				.filter(m -> m.category == category)

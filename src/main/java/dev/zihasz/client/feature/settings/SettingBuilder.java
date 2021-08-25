@@ -7,8 +7,8 @@ import java.util.function.Predicate;
 
 public class SettingBuilder<T> {
 
-	private String name, description;
 	private final T value;
+	private String name, description;
 	private T min, max = null;
 	private Predicate<T> visibility = v -> true;
 	private BiFunction<T, T, Boolean> callback = (oldValue, newValue) -> true;
@@ -22,27 +22,33 @@ public class SettingBuilder<T> {
 		this.name = name;
 		return this;
 	}
+
 	public SettingBuilder<T> description(String description) {
 		this.description = description;
 		return this;
 	}
+
 	public SettingBuilder<T> min(T min) {
 		this.min = min;
 		return this;
 	}
+
 	public SettingBuilder<T> max(T max) {
 		this.max = max;
 		return this;
 	}
+
 	public SettingBuilder<T> range(T min, T max) {
 		this.min = min;
 		this.max = max;
 		return this;
 	}
+
 	public SettingBuilder<T> visibility(Predicate<T> v) {
 		this.visibility = v;
 		return this;
 	}
+
 	public SettingBuilder<T> callback(BiFunction<T, T, Boolean> callback) {
 		this.callback = callback;
 		return this;

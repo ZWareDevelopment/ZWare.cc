@@ -33,6 +33,7 @@ public class Renderer2D implements Util {
 		GlStateManager.enableTexture2D();
 		GlStateManager.disableBlend();
 	}
+
 	public static void drawRectangleOutline(Rectangle rectangle, float width, Color color) {
 		GlStateManager.disableTexture2D();
 		GlStateManager.enableBlend();
@@ -66,6 +67,7 @@ public class Renderer2D implements Util {
 		glEnable(GL_TEXTURE_2D);
 		glDisable(GL_BLEND);
 	}
+
 	public static void drawCircleOutline(Point o, float radius, float width, Color color) {
 		GlStateManager.disableTexture2D();
 		GlStateManager.enableBlend();
@@ -160,6 +162,7 @@ public class Renderer2D implements Util {
 		GlStateManager.enableAlpha();
 		GlStateManager.enableTexture2D();
 	}
+
 	public static void drawRainbowRectangleHorizontal(Rectangle rectangle, float speed, int alpha, Color starting) {
 		Rainbow rainbow = new Rainbow(starting);
 
@@ -184,6 +187,7 @@ public class Renderer2D implements Util {
 		GlStateManager.enableTexture2D();
 		GlStateManager.disableBlend();
 	}
+
 	public static void drawRainbowRectangleVertical(Rectangle rectangle, int speed, int alpha, Color starting) {
 		Rainbow rainbow = new Rainbow(starting);
 

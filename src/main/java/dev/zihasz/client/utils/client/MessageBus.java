@@ -12,17 +12,21 @@ public class MessageBus implements Util {
 	public static void sendMessage(String message) {
 		mc.player.sendMessage(new TextComponentString(watermark + message));
 	}
+
 	public static void sendInfoMessage(String message) {
 		sendMessage(ChatFormatting.BLUE + message);
 	}
+
 	public static void sendWarningMessage(String message) {
 		sendMessage(ChatFormatting.YELLOW + message);
 	}
+
 	public static void sendErrorMessage(String message) {
 		sendMessage(ChatFormatting.RED + message);
 	}
+
 	public static void sendDebugMessage(String message) {
 		sendMessage(ChatFormatting.LIGHT_PURPLE + message);
 	}
-	
+
 }

@@ -27,18 +27,14 @@ public class Client {
 
 	@Instance
 	public static Client INSTANCE;
-
-	public Client() {
-		INSTANCE = this;
-	}
-
 	public static ClientLoader loader;
-
 	public static CommandManager commandManager;
 	public static ConfigManager configManager;
 	public static HudManager hudManager;
 	public static ModuleManager moduleManager;
-
+	public Client() {
+		INSTANCE = this;
+	}
 
 	@EventHandler
 	public void onPreInit(FMLPreInitializationEvent event) {

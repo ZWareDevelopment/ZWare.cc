@@ -15,6 +15,7 @@ public class InventoryUtil implements Util {
 		}
 		return -1;
 	}
+
 	public static int findHotbar(Block block) {
 		for (int i = 0; i < 9; i++) {
 			if (mc.player.inventory.getStackInSlot(i).equals(new ItemStack(block)))
@@ -22,9 +23,11 @@ public class InventoryUtil implements Util {
 		}
 		return -1;
 	}
+
 	public static int findInventory(Item item) {
 		return mc.player.inventory.getSlotFor(new ItemStack(item));
 	}
+
 	public static int findInventory(Block block) {
 		return mc.player.inventory.getSlotFor(new ItemStack(block));
 	}
@@ -47,9 +50,11 @@ public class InventoryUtil implements Util {
 		mc.playerController.updateController();
 		return true;
 	}
+
 	public static boolean switchTo(Item item) {
 		return switchTo(findHotbar(item));
 	}
+
 	public static boolean switchTo(Block block) {
 		return switchTo(findHotbar(block));
 	}

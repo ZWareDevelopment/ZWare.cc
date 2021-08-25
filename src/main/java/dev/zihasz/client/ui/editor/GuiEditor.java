@@ -67,7 +67,6 @@ public class GuiEditor extends GuiScreen {
 	}
 
 
-
 	@Override
 	public void onGuiClosed() {
 		Client.moduleManager.getModule(HUDEditor.class).setEnabled(false);
@@ -77,6 +76,7 @@ public class GuiEditor extends GuiScreen {
 	private Rectangle getRectFromComp(HudComponent component) {
 		return new Rectangle(component.location.x, component.location.y, component.width(), component.height());
 	}
+
 	private HudComponent getHovered(Point mouse) {
 		for (HudComponent component : Client.hudManager.getComponents())
 			if (getRectFromComp(component).contains(mouse))
@@ -84,6 +84,7 @@ public class GuiEditor extends GuiScreen {
 
 		return null;
 	}
+
 	private Color getBackgroundColor(boolean hovered, boolean enabled) {
 		Color color = colors.back;
 

@@ -3,7 +3,6 @@ package dev.zihasz.client.feature.hud.components;
 import dev.zihasz.client.feature.hud.HudComponent;
 import dev.zihasz.client.utils.render.Renderer2D;
 import net.minecraft.entity.player.EntityPlayer;
-import org.lwjgl.input.Mouse;
 
 import java.awt.*;
 import java.text.DecimalFormat;
@@ -11,11 +10,11 @@ import java.util.Comparator;
 
 public class TargetComponent extends HudComponent {
 
+	private final DecimalFormat FORMAT = new DecimalFormat("##.#");
+
 	public TargetComponent() {
 		super("TargetComponent", "Shows the nearest player and some info about them.", new Point(2, 10));
 	}
-
-	private final DecimalFormat FORMAT = new DecimalFormat("##.#");
 
 	@Override
 	public void render(float ticks) {
@@ -38,6 +37,7 @@ public class TargetComponent extends HudComponent {
 	public int width() {
 		return 200;
 	}
+
 	public int height() {
 		return 150;
 	}

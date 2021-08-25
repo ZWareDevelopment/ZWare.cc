@@ -67,13 +67,14 @@ public class CommandManager extends Manager {
 				} catch (Exception exception) {
 					MessageBus.sendErrorMessage(String.format("Failed to run %s!", cmd.getName()));
 				}
-			}
-			else
+			} else
 				MessageBus.sendErrorMessage(String.format("Couldn't find command named: %s", name));
 		}
 	}
 
-	public void addCommand(Command command) { this.commands.add(command); }
+	public void addCommand(Command command) {
+		this.commands.add(command);
+	}
 
 	public Command getCommand(String name) {
 		return this.commands.stream()
@@ -81,6 +82,7 @@ public class CommandManager extends Manager {
 				.findFirst()
 				.orElse(null);
 	}
+
 	public Command getCommand(Class<? extends Command> clazz) {
 		return this.commands.stream()
 				.filter(command -> command.getClass() == clazz)

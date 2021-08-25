@@ -18,6 +18,7 @@ public class RelationManager extends Manager {
 
 	/**
 	 * Adds a relation to the instance's relation list.
+	 *
 	 * @param relation The relation to add.
 	 * @return The relation.
 	 */
@@ -28,6 +29,7 @@ public class RelationManager extends Manager {
 
 	/**
 	 * Creates a new friend relation and adds it to the instance's relation list.
+	 *
 	 * @param name The name of the relation.
 	 * @param uuid The UUID of the friend.
 	 * @return The created relation.
@@ -38,6 +40,7 @@ public class RelationManager extends Manager {
 
 	/**
 	 * Creates a new enemy relation and adds it to the instance's relation list.
+	 *
 	 * @param name The name of the relation.
 	 * @param uuid The UUID of the enemy.
 	 * @return The created relation.
@@ -48,6 +51,7 @@ public class RelationManager extends Manager {
 
 	/**
 	 * Checks if a person is a friend or not. (UUID based)
+	 *
 	 * @param uuid The UUID of the person to check.
 	 * @return If the persons a friend or not.
 	 */
@@ -61,6 +65,7 @@ public class RelationManager extends Manager {
 
 	/**
 	 * Checks if a person is an enemy or not. (UUID based)
+	 *
 	 * @param uuid The UUID of the person to check.
 	 * @return If the persons an enemy or not.
 	 */
@@ -74,6 +79,7 @@ public class RelationManager extends Manager {
 
 	/**
 	 * Gets a relation from the instance's list.
+	 *
 	 * @param uuid The UUID of the person.
 	 * @return The persons relation or null if not in the list.
 	 */

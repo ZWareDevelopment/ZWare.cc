@@ -12,7 +12,9 @@ public abstract class BlockEvent extends Event {
 		this.pos = pos;
 	}
 
-	public BlockPos getPos() { return pos; }
+	public BlockPos getPos() {
+		return pos;
+	}
 
 	public static class Click extends BlockEvent {
 		private final EnumFacing facing;
@@ -22,7 +24,9 @@ public abstract class BlockEvent extends Event {
 			this.facing = facing;
 		}
 
-		public EnumFacing getFacing() { return facing; }
+		public EnumFacing getFacing() {
+			return facing;
+		}
 	}
 
 	public static class Damage extends BlockEvent {
@@ -33,7 +37,9 @@ public abstract class BlockEvent extends Event {
 			this.facing = facing;
 		}
 
-		public EnumFacing getFacing() { return facing; }
+		public EnumFacing getFacing() {
+			return facing;
+		}
 	}
 
 	public static class Destroy extends BlockEvent {

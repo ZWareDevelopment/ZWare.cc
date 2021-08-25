@@ -37,6 +37,7 @@ public class ConfigManager extends Manager {
 		if (!Files.exists(Paths.get(MAIN_FOLDER))) Files.createDirectory(Paths.get(MAIN_FOLDER));
 		if (!Files.exists(Paths.get(CONFIG_FOLDER))) Files.createDirectory(Paths.get(CONFIG_FOLDER));
 	}
+
 	private void createFiles() throws IOException {
 		if (!Files.exists(Paths.get(MODULES_FILE))) Files.createFile(Paths.get(MODULES_FILE));
 		if (!Files.exists(Paths.get(FRIENDS_FILE))) Files.createFile(Paths.get(FRIENDS_FILE));
@@ -54,6 +55,7 @@ public class ConfigManager extends Manager {
 		}
 
 	}
+
 	public void save() {
 
 		try {
@@ -72,7 +74,7 @@ public class ConfigManager extends Manager {
 
 			JsonParser parser = new JsonParser();
 			JsonElement parsed = parser.parse(reader);
-			if (parsed instanceof    JsonNull) return;
+			if (parsed instanceof JsonNull) return;
 			JsonArray modulesArray = (JsonArray) parsed;
 
 			for (Object moduleObject : modulesArray) {
@@ -125,6 +127,7 @@ public class ConfigManager extends Manager {
 		}
 
 	}
+
 	private void saveModules() throws IOException {
 		JsonArray modulesArray = new JsonArray();
 

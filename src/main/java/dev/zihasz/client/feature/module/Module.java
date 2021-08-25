@@ -17,28 +17,47 @@ public abstract class Module extends Feature implements IToggleable, IBindable {
 		this.category = category;
 		this.bind = bind;
 	}
+
 	public Module(String name, String description, Category category) {
 		this(name, description, category, Keyboard.KEY_NONE);
 	}
 
-	public void onEnable() {}
-	public void onDisable() {}
+	public void onEnable() {
+	}
 
-	public void enable() { this.setEnabled(true); }
-	public void disable() { this.setEnabled(false); }
-	public void toggle() { this.setEnabled(!enabled); }
+	public void onDisable() {
+	}
 
-	public int getBind() { return bind; }
-	public boolean isEnabled() { return enabled; }
+	public void enable() {
+		this.setEnabled(true);
+	}
 
-	public void setBind(int bind) { this.bind = bind; }
+	public void disable() {
+		this.setEnabled(false);
+	}
+
+	public void toggle() {
+		this.setEnabled(!enabled);
+	}
+
+	public int getBind() {
+		return bind;
+	}
+
+	public void setBind(int bind) {
+		this.bind = bind;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 		if (enabled) {
 			MinecraftForge.EVENT_BUS.register(this);
 			onEnable();
-		}
-		else {
+		} else {
 			onDisable();
 			MinecraftForge.EVENT_BUS.unregister(this);
 		}

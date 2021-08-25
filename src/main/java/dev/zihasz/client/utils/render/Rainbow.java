@@ -20,37 +20,6 @@ public class Rainbow {
 		this.hue = hue;
 	}
 
-	public void update(float val) {
-		hue += (val % 360f) / 360f;
-	}
-
-	public Color getColor() {
-		return new Color(Color.HSBtoRGB(hue, 1.0f, 1.0f));
-	}
-
-	public Color getColor(float off) {
-		return new Color(Color.HSBtoRGB(((hue + off) % 360), 1.0f, 1.0f));
-	}
-
-	public Color getColor(float off, float sat, float bright) {
-		return new Color(Color.HSBtoRGB(((hue + off) % 360), sat, bright));
-	}
-
-	public float getHue() {
-		return hue;
-	}
-
-	public float getHueMultiplied() {
-		return hue * 360f;
-	}
-
-	public void setHue(float hue) {
-		this.hue = hue;
-	}
-
-	// static methods below
-	// very spaghetti
-
 	private static float transform(float max, float val) {
 		final float f0 = val / max;
 		return f0 * 1.0f;
@@ -68,5 +37,36 @@ public class Rainbow {
 	public static Color getColorStatic(float off, float speed, float sat, float bright, int alpha) {
 		final Color color = new Color(Color.HSBtoRGB(transform(((long) (6500L / speed)), (System.currentTimeMillis() + ((long) off)) % ((long) (6500L / speed))), sat, bright));
 		return new Color(color.getRed(), color.getGreen(), color.getBlue(), alpha);
+	}
+
+	public void update(float val) {
+		hue += (val % 360f) / 360f;
+	}
+
+	public Color getColor() {
+		return new Color(Color.HSBtoRGB(hue, 1.0f, 1.0f));
+	}
+
+	public Color getColor(float off) {
+		return new Color(Color.HSBtoRGB(((hue + off) % 360), 1.0f, 1.0f));
+	}
+
+	// static methods below
+	// very spaghetti
+
+	public Color getColor(float off, float sat, float bright) {
+		return new Color(Color.HSBtoRGB(((hue + off) % 360), sat, bright));
+	}
+
+	public float getHue() {
+		return hue;
+	}
+
+	public void setHue(float hue) {
+		this.hue = hue;
+	}
+
+	public float getHueMultiplied() {
+		return hue * 360f;
 	}
 }
