@@ -1,9 +1,7 @@
 package dev.zihasz.client;
 
-import dev.zihasz.client.core.ClientLoader;
 import dev.zihasz.client.manager.config.ConfigManager;
 import dev.zihasz.client.manager.feature.CommandManager;
-import dev.zihasz.client.manager.feature.HudManager;
 import dev.zihasz.client.manager.feature.ModuleManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -27,19 +25,18 @@ public class Client {
 
 	@Instance
 	public static Client INSTANCE;
-	public static ClientLoader loader;
+
 	public static CommandManager commandManager;
 	public static ConfigManager configManager;
-	public static HudManager hudManager;
 	public static ModuleManager moduleManager;
+
 	public Client() {
 		INSTANCE = this;
 	}
 
 	@EventHandler
 	public void onPreInit(FMLPreInitializationEvent event) {
-		loader = new ClientLoader();
-		loader.initialize();
+
 	}
 
 	@EventHandler

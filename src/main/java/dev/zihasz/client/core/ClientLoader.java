@@ -16,16 +16,8 @@ import java.util.Map;
 public class ClientLoader implements IFMLLoadingPlugin {
 
 	public ClientLoader() {
-
-	}
-
-	public void initialize() {
-		Client.LOGGER.info("Initializing mixins...");
-
 		MixinBootstrap.init();
 		Mixins.addConfiguration("mixins.client.json");
-
-		Client.LOGGER.info("Successfully initialized mixins!");
 	}
 
 	@Override
@@ -41,7 +33,7 @@ public class ClientLoader implements IFMLLoadingPlugin {
 	@Nullable
 	@Override
 	public String getSetupClass() {
-		return "dev.zihasz.client.core.ClientHook";
+		return null;
 	}
 
 	@Override

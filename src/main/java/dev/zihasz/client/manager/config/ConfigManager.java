@@ -152,8 +152,8 @@ public class ConfigManager extends Manager {
 					settingJson.addProperty("value", (String) setting.getValue());
 				else if (setting.getValue() instanceof Color) {
 					settingJson.addProperty("value", ((Color) setting.getValue()).getRGB());
-				} else if (setting.getValue() instanceof Enum)
-					settingJson.addProperty("value", ((Enum) setting.getValue()).name());
+				} else if (setting.getValue() instanceof Enum<?>)
+					settingJson.addProperty("value", ((Enum<?>) setting.getValue()).name());
 				else
 					throw new IllegalStateException("Illegal setting type! " + setting.getName());
 

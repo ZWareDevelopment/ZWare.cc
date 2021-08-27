@@ -28,12 +28,11 @@ minecraft {
 }
 
 repositories {
-    mavenCentral()                                          // Maven Central
-    maven { url = 'https://repo.spongepowered.org/maven' }  // SpongePowered
-    maven { url = 'https://jitpack.io/' }                   // JitPack
+    mavenCentral()
+    maven { url = 'https://repo.spongepowered.org/maven' }
+    maven { url = 'https://jitpack.io/' }
 }
 dependencies {
-    // Mixin
     compile('org.spongepowered:mixin:0.8.2') {
         exclude module: 'launchwrapper'
         exclude module: 'guava'
@@ -41,15 +40,10 @@ dependencies {
         exclude module: 'commons-io'
     }
 
-    // Reflections
     compile('org.reflections:reflections:0.9.12') {
         exclude module: 'guava'
     }
 
-    // Annotations
-    compile 'org.jetbrains:annotations:21.0.1'
-
-    // Discord RPC
     compile 'club.minnced:java-discord-rpc:v2.0.2'
 }
 
@@ -68,18 +62,10 @@ processResources {
 }
 shadowJar {
     dependencies {
-        // Mixin
         include(dependency('org.spongepowered:mixin'))
-
-        // Reflections
         include(dependency('org.reflections:reflections'))
         include(dependency('net.jodah:typetools'))
         include(dependency('org.javassist:javassist'))
-
-        // Annotations
-        include(dependency('org.jetbrains:annotations'))
-
-        // Discord RPC
         include(dependency('club.minnced:java-discord-rpc'))
     }
     exclude 'dummyThing'
