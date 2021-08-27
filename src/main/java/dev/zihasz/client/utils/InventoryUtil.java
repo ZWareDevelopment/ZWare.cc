@@ -1,6 +1,5 @@
 package dev.zihasz.client.utils;
 
-import dev.zihasz.client.utils.Util;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.ClickType;
 import net.minecraft.item.Item;

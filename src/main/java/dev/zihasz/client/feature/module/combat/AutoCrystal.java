@@ -9,10 +9,6 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class AutoCrystal extends Module {
 
-	public AutoCrystal() {
-		super("AutoCrystal", "Automatic crystals :brain:", Category.COMBAT);
-	}
-
 	private final Setting<Void> configParent = new SettingBuilder<>((Void) null).name("Config").description("Configuration related settings.").build(this);
 	private final Setting<Preset> configPreset = new SettingBuilder<>(Preset.SemiStrict).name("Config Preset").description("Default config presets.").callback((preset, preset2) -> true).parent(configParent).build(this);
 	private final Setting<Boolean> lockPBR = new SettingBuilder<>(true).name("LockPBR").description("Lock place-break range. Useful on some servers.").parent(configParent).build(this);
@@ -20,7 +16,6 @@ public class AutoCrystal extends Module {
 	private final Setting<Boolean> autoConfig = new SettingBuilder<>(true).name("Auto Delay Config").description("Automatically config delays.").parent(configParent).build(this);
 	private final Setting<Integer> autoConfigPlaceFactor = new SettingBuilder<>(0).name("AC Place Factor").description("The number to divide your ping with to get the place delay. (Set to 0 to don't change the place delay)").range(0, 10).parent(autoConfig).build(this);
 	private final Setting<Integer> autoConfigBreakFactor = new SettingBuilder<>(2).name("AC Break Factor").description("The number to divide your ping with to get the break delay. (Set to 0 to don't change the break delay)").range(0, 10).parent(autoConfig).build(this);
-
 	private final Setting<Boolean> placeSetting = new SettingBuilder<>(true).name("Place").description("Do place cycles.").build(this);
 	private final Setting<Rotate> placeRotate = new SettingBuilder<>(Rotate.None).name("Place Rotate").description("How to rotate to the place position.").parent(placeSetting).build(this);
 	private final Setting<Float> placeRange = new SettingBuilder<>(5.0f).name("Place Range").description("How far can the AC place crystals.").parent(placeSetting).build(this);
@@ -33,7 +28,6 @@ public class AutoCrystal extends Module {
 	private final Setting<Integer> placeMaxSDamage = new SettingBuilder<>(18).name("Place Max Self Damage").description("The maximum damage done to yourself when the crystal is placed.").parent(placeSetting).build(this);
 	private final Setting<Integer> placeFacePlace = new SettingBuilder<>(12).name("Face Place").description("The health to faceplace at.").parent(placeSetting).build(this);
 	private final Setting<Integer> placeArmorPercent = new SettingBuilder<>(20).name("Armor Breaker").description("The percent to start face placing to break armor.").parent(placeSetting).build(this);
-
 	private final Setting<Boolean> breakSetting = new SettingBuilder<>(true).name("Break").description("Do break cycles.").build(this);
 	private final Setting<Rotate> breakRotate = new SettingBuilder<>(Rotate.None).name("Break Rotate").description("How to rotate to the break position.").parent(breakSetting).build(this);
 	private final Setting<Float> breakRange = new SettingBuilder<>(5.0f).name("Break Range").description("How far can the AC break crystals.").parent(breakSetting).build(this);
@@ -44,10 +38,8 @@ public class AutoCrystal extends Module {
 	private final Setting<Integer> breakMaxDamage = new SettingBuilder<>(36).name("Break Max Damage").description("The maximum damage done to the target when the crystal is break.").parent(breakSetting).build(this);
 	private final Setting<Integer> breakMinSDamage = new SettingBuilder<>(0).name("Break Min Self Damage").description("The minimum damage done to yourself when the crystal is break.").parent(breakSetting).build(this);
 	private final Setting<Integer> breakMaxSDamage = new SettingBuilder<>(18).name("Break Max Self Damage").description("The maximum damage done to yourself when the crystal is break.").parent(breakSetting).build(this);
-
 	private final Setting<Switch> switchSetting = new SettingBuilder<>(Switch.None).name("Switch").description("Switches to crystal.").build(this);
 	private final Setting<Switch> antiWeakness = new SettingBuilder<>(Switch.Silent).name("Anti Weakness").description("Switches to a sword when breaking if u have weakness.").build(this);
-
 	private final Setting<Boolean> render = new SettingBuilder<>(true).name("Render").description("Render place pos duh").build(this);
 	private final Setting<Shape> shape = new SettingBuilder<>(Shape.FULL).name("Shape").description("Shape of the render.").parent(render).build(this);
 	private final Setting<Float> height = new SettingBuilder<>(.25f).name("Height").description("Height of the slab").min(0f).max(1f).visibility(v -> shape.getValue().equals(Shape.SLAB)).parent(render).build(this);
@@ -56,6 +48,10 @@ public class AutoCrystal extends Module {
 	private final Setting<Outline> outline = new SettingBuilder<>(Outline.SIMPLE).name("Outline Mode").description("The way to render the outline").visibility(v -> mode.getValue().equals(Mode.OUTLINE) || mode.getValue().equals(Mode.BOTH)).parent(render).build(this);
 	private final Setting<Float> length = new SettingBuilder<>(.1f).name("Claw Length").description("Length of the \"claws\".").min(0f).max(.5f).visibility(v -> (mode.getValue().equals(Mode.OUTLINE) || mode.getValue().equals(Mode.BOTH)) && outline.getValue().equals(Outline.CLAW)).parent(render).build(this);
 	private final Setting<Integer> outlineAlpha = new SettingBuilder<>(0).name("Outline Alpha").description("Alpha of the outline").min(0).max(255).visibility(v -> mode.getValue().equals(Mode.OUTLINE) || mode.getValue().equals(Mode.BOTH)).parent(render).build(this);
+
+	public AutoCrystal() {
+		super("AutoCrystal", "Automatic crystals :brain:", Category.COMBAT);
+	}
 
 	@Override
 	public void onEnable() {
@@ -77,27 +73,32 @@ public class AutoCrystal extends Module {
 		SemiStrict,
 		FullStrict,
 	}
+
 	private enum Rotate {
 		None,
 		Client,
 		Packet,
 		Spoof,
 	}
+
 	private enum Switch {
 		None,
 		Normal,
 		Silent
 	}
+
 	private enum Shape {
 		FULL,
 		SLAB,
 		FLAT,
 	}
+
 	private enum Mode {
 		OUTLINE,
 		FILL,
 		BOTH,
 	}
+
 	private enum Outline {
 		SIMPLE,
 		CLAW,

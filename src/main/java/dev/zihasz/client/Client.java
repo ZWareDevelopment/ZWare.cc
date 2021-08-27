@@ -1,8 +1,10 @@
 package dev.zihasz.client;
 
+import dev.zihasz.client.manager.client.CapeManager;
 import dev.zihasz.client.manager.config.ConfigManager;
 import dev.zihasz.client.manager.feature.CommandManager;
 import dev.zihasz.client.manager.feature.ModuleManager;
+import dev.zihasz.client.manager.relations.RelationManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -29,6 +31,8 @@ public class Client {
 	public static CommandManager commandManager;
 	public static ConfigManager configManager;
 	public static ModuleManager moduleManager;
+	public static RelationManager relationManager;
+	public static CapeManager capeManager;
 
 	public Client() {
 		INSTANCE = this;
@@ -44,15 +48,15 @@ public class Client {
 		commandManager = new CommandManager();
 		configManager = new ConfigManager();
 		moduleManager = new ModuleManager();
+		relationManager = new RelationManager();
 
 		configManager.load();
-
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> configManager.save()));
 	}
 
 	@EventHandler
 	public void onPostInit(FMLPostInitializationEvent event) {
-
+		capeManager = new CapeManager();
 	}
 
 	@EventHandler

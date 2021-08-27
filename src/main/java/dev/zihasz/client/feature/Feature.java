@@ -10,9 +10,9 @@ import java.util.Random;
 public abstract class Feature {
 
 	public final String name, description;
+	private final List<Setting> settings = new ArrayList<>();
 	protected Minecraft mc = Minecraft.getMinecraft();
 	protected Random random = new Random();
-	private final List<Setting> settings = new ArrayList<>();
 
 	public Feature(String name, String description) {
 		this.name = name;

@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(NetworkManager.class)
-public class MixinNetworkManager {
+public abstract class MixinNetworkManager {
 
 	@Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)
 	public void channelRead0(ChannelHandlerContext p_channelRead0_1_, Packet<?> p_channelRead0_2_, CallbackInfo ci) {

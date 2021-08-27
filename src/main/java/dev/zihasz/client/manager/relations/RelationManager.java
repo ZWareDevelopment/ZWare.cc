@@ -13,7 +13,7 @@ public class RelationManager extends Manager {
 	 * Creates an instance of RelationManager.
 	 */
 	public RelationManager() {
-		relations.add(new Relation(mc.session.getUsername(), mc.session.getPlayerID(), RelationType.FRIEND));
+
 	}
 
 	/**

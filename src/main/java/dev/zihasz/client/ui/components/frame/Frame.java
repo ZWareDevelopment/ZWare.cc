@@ -16,7 +16,10 @@ public class Frame implements Component {
 	private final Category category;
 	private final String title;
 	private final List<ModuleButton> modules = new ArrayList<>();
-	private int x, y, width, height;
+	private final int x;
+	private final int y;
+	private final int width;
+	private final int height;
 
 	private int offset = 0;
 	private boolean open = true;

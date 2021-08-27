@@ -9,15 +9,15 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class Step extends Module {
 
-	public Step() {
-		super("Step", "Steps up blocks bruh", Category.MOVEMENT);
-	}
-
 	private final Setting<Mode> modeSetting = new SettingBuilder<>(Mode.Vanilla)
 			.name("Mode")
 			.description("The mode to use. \n - Vanilla: Good for singleplayer or servers with bad anti cheat. \n - Normal: Good for most servers \n - Bypass: Good for strict servers \n")
 			.build(this);
 	private final Setting<Integer> heightSetting = new SettingBuilder<>(2).name("Height").description("The step height").build(this);
+
+	public Step() {
+		super("Step", "Steps up blocks bruh", Category.MOVEMENT);
+	}
 
 	@Override
 	public void onEnable() {

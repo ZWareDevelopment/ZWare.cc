@@ -13,7 +13,7 @@
 	  "historian"
 	],
 	"credits": "Forge Team for FML, Sponge for Mixin, Minnced for the RPC",
-	"logoFile": "logo.png",
+	"logoFile": "assets/zware.png",
 	"screenshots": [],
 	"dependencies": []
   }

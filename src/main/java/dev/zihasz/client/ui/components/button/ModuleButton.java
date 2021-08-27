@@ -16,7 +16,10 @@ public class ModuleButton implements Component {
 	private final List<SettingComponent<?>> settings = new ArrayList<>();
 
 	private final Module module;
-	private int x, y, width, height;
+	private final int x;
+	private final int y;
+	private final int width;
+	private final int height;
 
 	private int offset = 0;
 	private boolean open = false;

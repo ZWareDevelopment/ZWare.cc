@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(EntityPlayerSP.class)
-public class MixinEntityPlayerSP extends AbstractClientPlayer {
+public abstract class MixinEntityPlayerSP extends AbstractClientPlayer {
 
 	public MixinEntityPlayerSP(World worldIn, GameProfile playerProfile) {
 		super(worldIn, playerProfile);

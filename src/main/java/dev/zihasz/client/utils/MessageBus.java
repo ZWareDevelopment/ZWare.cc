@@ -2,7 +2,6 @@ package dev.zihasz.client.utils;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import dev.zihasz.client.Client;
-import dev.zihasz.client.utils.Util;
 import net.minecraft.util.text.TextComponentString;
 
 public class MessageBus implements Util {

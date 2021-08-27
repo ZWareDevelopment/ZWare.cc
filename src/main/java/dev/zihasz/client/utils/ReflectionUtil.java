@@ -1,6 +1,5 @@
 package dev.zihasz.client.utils;
 
-import dev.zihasz.client.utils.Util;
 import org.reflections.Reflections;
 
 import java.util.Set;

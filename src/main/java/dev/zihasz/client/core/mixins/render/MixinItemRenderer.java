@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ItemRenderer.class)
-public class MixinItemRenderer {
+public abstract class MixinItemRenderer {
 
 	@Inject(method = "transformFirstPerson(Lnet/minecraft/util/EnumHandSide;F)V", at = @At("HEAD"), cancellable = true)
 	public void transformFirstPerson(EnumHandSide hand, float p_187453_2_, CallbackInfo ci) {
