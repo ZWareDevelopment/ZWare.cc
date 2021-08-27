@@ -1,6 +1,5 @@
-package dev.zihasz.client.utils.render;
+package dev.zihasz.client.utils;
 
-import dev.zihasz.client.utils.Util;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;

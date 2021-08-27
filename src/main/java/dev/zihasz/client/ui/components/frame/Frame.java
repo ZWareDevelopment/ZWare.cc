@@ -5,7 +5,7 @@ import dev.zihasz.client.feature.module.Category;
 import dev.zihasz.client.feature.module.Module;
 import dev.zihasz.client.ui.components.Component;
 import dev.zihasz.client.ui.components.button.ModuleButton;
-import dev.zihasz.client.utils.render.Renderer2D;
+import dev.zihasz.client.utils.Renderer2D;
 
 import java.awt.*;
 import java.util.ArrayList;

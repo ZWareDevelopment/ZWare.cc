@@ -1,4 +1,4 @@
-package dev.zihasz.client.utils.text;
+package dev.zihasz.client.utils;
 
 import dev.zihasz.client.utils.Util;
 

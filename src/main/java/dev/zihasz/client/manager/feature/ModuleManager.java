@@ -4,7 +4,7 @@ import dev.zihasz.client.Client;
 import dev.zihasz.client.feature.module.Category;
 import dev.zihasz.client.feature.module.Module;
 import dev.zihasz.client.manager.Manager;
-import dev.zihasz.client.utils.client.ReflectionUtil;
+import dev.zihasz.client.utils.ReflectionUtil;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;

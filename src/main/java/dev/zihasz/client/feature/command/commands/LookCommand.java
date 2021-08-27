@@ -1,7 +1,7 @@
 package dev.zihasz.client.feature.command.commands;
 
 import dev.zihasz.client.feature.command.Command;
-import dev.zihasz.client.utils.client.MessageBus;
+import dev.zihasz.client.utils.MessageBus;
 
 public class LookCommand extends Command {
 	public LookCommand() {

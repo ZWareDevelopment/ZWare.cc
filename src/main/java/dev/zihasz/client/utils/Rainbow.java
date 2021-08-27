@@ -1,4 +1,4 @@
-package dev.zihasz.client.utils.render;
+package dev.zihasz.client.utils;
 
 import java.awt.*;
 

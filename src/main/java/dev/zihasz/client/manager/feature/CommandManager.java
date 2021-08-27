@@ -2,8 +2,8 @@ package dev.zihasz.client.manager.feature;
 
 import dev.zihasz.client.feature.command.Command;
 import dev.zihasz.client.manager.Manager;
-import dev.zihasz.client.utils.client.MessageBus;
-import dev.zihasz.client.utils.client.ReflectionUtil;
+import dev.zihasz.client.utils.MessageBus;
+import dev.zihasz.client.utils.ReflectionUtil;
 import net.minecraftforge.client.event.ClientChatEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;

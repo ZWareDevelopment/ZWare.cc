@@ -1,4 +1,4 @@
-package dev.zihasz.client.utils.player;
+package dev.zihasz.client.utils;
 
 import dev.zihasz.client.utils.Util;
 import net.minecraft.block.Block;

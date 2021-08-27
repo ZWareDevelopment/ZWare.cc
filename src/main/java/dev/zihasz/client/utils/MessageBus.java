@@ -1,4 +1,4 @@
-package dev.zihasz.client.utils.client;
+package dev.zihasz.client.utils;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import dev.zihasz.client.Client;

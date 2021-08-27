@@ -4,7 +4,7 @@ import dev.zihasz.client.Client;
 import dev.zihasz.client.feature.command.Command;
 import dev.zihasz.client.feature.module.Category;
 import dev.zihasz.client.feature.module.Module;
-import dev.zihasz.client.utils.client.MessageBus;
+import dev.zihasz.client.utils.MessageBus;
 
 public class ModulesCommand extends Command {
 
