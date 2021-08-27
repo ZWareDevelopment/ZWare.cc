@@ -1,6 +1,7 @@
 package dev.zihasz.client.ui.components.settings;
 
 import dev.zihasz.client.feature.settings.Setting;
+import dev.zihasz.client.ui.components.Component;
 import dev.zihasz.client.utils.render.Renderer2D;
 
 import java.awt.*;

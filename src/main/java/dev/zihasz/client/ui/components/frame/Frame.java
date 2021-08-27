@@ -41,18 +41,16 @@ public class Frame implements Component {
 
 	@Override
 	public void render(int mx, int my) {
-		// Renderer2D.drawRectangle(x, y + offset, width, height, new Color(0xff3f3f3f));
-		Renderer2D.drawGradientRectangle(x, y, width, height, new Color(0xff3f3f3f), new Color(0xff4f4f4f));
+		Renderer2D.drawGradientRectangle(x, y + offset, width, height, new Color(0xff3f3f3f), new Color(0xff4f4f4f));
 		fr.drawString(title, x + (width / 2f) - (fr.getStringWidth(title) / 2f), y + offset + (height / 2f) - (HALF_FONT), 0xf3f3f3, true);
 
-		if (open) {
-			int mo = 0;
-			for (ModuleButton button : modules) {
-				button.setOffset(mo);
-				mo += button.height();
+		int off = height;
+		for (Component component : modules) {
+			component.setOffset(off);
+			off += component.height();
 
-				button.render(mx, my);
-			}
+			if (open)
+				component.render(mx, my);
 		}
 
 		Renderer2D.drawRectangleOutline(x, y + offset, width, height(), 2f, new Color(0xff98ff98));
@@ -102,11 +100,9 @@ public class Frame implements Component {
 	public int height() {
 		int out = height;
 
-		if (open) {
-			for (ModuleButton button : modules) {
-				out += button.height();
-			}
-		}
+		if (open)
+			for (Component component : modules)
+				out += component.height();
 
 		return out;
 	}

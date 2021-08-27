@@ -39,15 +39,17 @@ public class ModuleButton implements Component {
 
 	@Override
 	public void render(int mx, int my) {
-		// Renderer2D.drawRectangle(x, y, width, height, new Color(0xff3f3f3f));
 		Renderer2D.drawGradientRectangle(x, y, width, height, new Color(0xff3f3f3f), new Color(0xff4f4f4f));
 		fr.drawString(module.name, x + 3.5f, y + (height / 2f) - HALF_FONT, module.enabled ? 0xff98ff98 : 0xf3f3f3, true);
 		fr.drawString(open ? "V" : ">", x + width - fr.getStringWidth(open ? "V" : ">") - 3.5f, y + (height / 2f) - HALF_FONT, 0xf3f3f3, true);
 
-		if (open) {
-			for (Component component : settings) {
+		int off = height;
+		for (Component component : settings) {
+			component.setOffset(off);
+			off += component.height();
+
+			if (open)
 				component.render(mx, my);
-			}
 		}
 	}
 
@@ -83,11 +85,9 @@ public class ModuleButton implements Component {
 	public int height() {
 		int out = height;
 
-		if (open) {
-			for (Component component : settings) {
+		if (open)
+			for (Component component : settings)
 				out += component.height();
-			}
-		}
 
 		return out;
 	}
